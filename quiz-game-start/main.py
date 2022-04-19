@@ -2,7 +2,7 @@ from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
 
-question_bank =[]
+question_bank = []
 
 for i in question_data:
     question_text = i["text"]

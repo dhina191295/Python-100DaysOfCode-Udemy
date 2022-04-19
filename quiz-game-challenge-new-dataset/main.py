@@ -1,16 +1,25 @@
-# This is a sample Python script.
+from question_model import Question
+from data import question_data
+from quiz_brain import QuizBrain
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+question_bank = []
+
+for i in question_data:
+    question_text = i["question"]                           # changing the variable is more than enough to complete this challenge
+    question_answer = i["correct_answer"]                   # changing the variable is more than enough to complete this challenge
+    new_question = Question(text=question_text, answer=question_answer)
+    question_bank.append(new_question)
+
+# for i in question_bank:
+#     print(i.text)
+#     print(i.answer)
+
+quiz = QuizBrain(question_bank)
+
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("you have completed the quiz.")
+print(f"Your final score is {quiz.score}/{quiz.question_number}")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

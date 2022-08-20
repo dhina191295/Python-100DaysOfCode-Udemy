@@ -1,9 +1,8 @@
-from MoneyMachine import MoneyMachine
 from art import logo
-from MenuList import MenuObj as Menu
 from CoffeeMachine import CoffeeMachine
+from MenuList import MenuObj as Menu
+from MoneyMachine import MoneyMachine
 from Resources import Resources
-
 
 print(logo)
 machine_state = True

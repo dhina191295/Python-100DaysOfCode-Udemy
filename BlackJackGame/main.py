@@ -1,9 +1,9 @@
 ############### Blackjack Project #####################
 
-#Difficulty Normal 😎: Use all Hints below to complete the project.
-#Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
-#Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
-#Difficulty Expert 🤯: Only use Hint 1 to complete the project.
+# Difficulty Normal 😎: Use all Hints below to complete the project.
+# Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
+# Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
+# Difficulty Expert 🤯: Only use Hint 1 to complete the project.
 
 ############### Our Blackjack House Rules #####################
 
@@ -22,6 +22,8 @@ import random
 import os
 
 play_value = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+
+
 def play_blackjack():
     os.system('clear')
     if play_value != "n":
@@ -35,7 +37,6 @@ def play_blackjack():
     dealer_score = 0
 
     invalid_hand = True
-
 
     while invalid_hand:
         user.append(random.choice(cards))
@@ -71,12 +72,11 @@ def play_blackjack():
     else:
         game_progress = True
 
-
     while game_progress:
         pass_value = input("Type 'y' to get another card, type 'n' to pass: ").lower()
         if pass_value == "n":
             while dealer_score < 17:
-                new_card= random.choice(cards)
+                new_card = random.choice(cards)
                 if new_card == 11 and dealer_score + 11 > 21:
                     dealer.append(1)
                 else:
@@ -102,7 +102,7 @@ def play_blackjack():
                     print("You won")
 
         else:
-            new_card= random.choice(cards)
+            new_card = random.choice(cards)
             if new_card == 11 and dealer_score + 11 > 21:
                 user.append(1)
             else:
@@ -113,13 +113,14 @@ def play_blackjack():
                 user_score += i
             print(f"user score: {user_score}")
             if user_score > 21:
-                result= True
+                result = True
                 print("You lose")
                 break
-        if result ==  True:
+        if result == True:
             game_progress = False
     new_game = input("Please type 'y' to start a new game or type 'n' to exit: ")
     if new_game == "y":
         play_blackjack()
+
 
 play_blackjack()
